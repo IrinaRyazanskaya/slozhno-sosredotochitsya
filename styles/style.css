@@ -1,5 +1,132 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-color);
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--font-family);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-areas: 
+    'menu menu'
+    'title title'
+    'text text';
+  min-height: 100vh;
+  padding: var(--small-gap);
+}
+
+.header__theme-menu {
+  grid-area: menu;
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+}
+
+.header__theme-menu-button {
+  width: 70px;
+  height: 26px;
+  padding-block-end: 3px;
+  background-color: transparent;
+  color: var(--accent-color);
+  line-height: 1rem;
+  border: none;
+  text-transform: lowercase;
+  font-size: var(--font-size);
+  appearance: none;
+  border: 1px solid transparent;
+}
+
+.theme_dark .header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+}
+
+.theme_dark .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
+  border: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.theme_dark .header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.header__decoration {
+  position: absolute;
+  color: var(--accent-color);
+  line-height: 1.6rem;
+  text-transform: uppercase;
+  inset-inline-end: 28px;
+  font-size: var(--font-size);
+}
+
+.header__decoration::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  inset-inline-start: 7px;
+  inset-block-end: 2px;
+  background-color: var(--accent-color);
+  width: 9px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px var(--accent-color);
+}
+
+.header__title,
+.footer__content {
+  font-size: 116px;
+  color: var(--title-color);
+  text-shadow: var(--text-shadow);
+  line-height: 82.5%;
+}
+
+.header__title {
+  grid-area: title;
+}
+
+.header__text {
+  color: var(--subtitle-color);
+  background-color: var(--accent-color);
+  font-weight: bold;
+  font-size: var(--font-size);
+  grid-area: text;
+  align-self: center;
+}
+
+.decorated-zone::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  aspect-ratio: 1;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+  inset-inline-start: var(--small-gap);
+  inset-block-end: var(--small-gap);
+}
+
+.decorated-zone::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  aspect-ratio: 1;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+  inset-inline-end: var(--small-gap);
+  inset-block-start: var(--small-gap);
 }

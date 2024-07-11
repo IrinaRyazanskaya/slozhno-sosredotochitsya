@@ -4,11 +4,13 @@
 */
 :root {
   --bg-color: #000028;
+  --title-color: #db00ff;
   --text-color: #f1b2ce;
   --subtitle-color: var(--bg-color);
   --accent-color: #ff0070;
-  --text-shadow: 4px 4px 0 var(--accent-color);
+  --text-shadow: 4px 4px 0 #ff0070;
   --small-gap: 10px;
   --big-gap: 20px;
-  --font: 'IBM Plex mono', sans-serif;
+  --font-family: 'IBM Plex mono', sans-serif;
+  --font-size: 18px;
 }
