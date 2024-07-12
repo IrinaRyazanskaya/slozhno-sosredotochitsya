@@ -136,54 +136,60 @@
   font-size: var(--font-size);
 }
 
-.section {
+.content__section {
+  display: grid;
+  gap: var(--big-gap);
   margin-block-start: 30px;
   padding: var(--small-gap);
   line-height: 1.3em;
 }
 
-.section__title {
+.content__title {
   font-size: inherit;
   color: var(--accent-color);
 }
 
-.section__subtitle {
+.content__wrap {
+  display: grid;
+  gap: var(--big-gap);
+}
+
+.content__paragraph-wrap {
+  display: grid;
+  gap: var(--small-gap);
+}
+
+.content__subtitle {
   font-size: inherit;
   color: var(--bg-color);
   background-color: var(--accent-color);
-  margin: var(--big-gap) 0 var(--small-gap);
 }
 
-.section__subtitle:last-of-type {
-  margin-block-start: 0;
-}
-
-.section__text {
+.content__text {
   color: var(--text-color);
 }
 
-.section__advice {
+.content__advice {
   color: var(--bg-color);
   font-weight: normal;
   background-color: var(--accent-color);
-  margin: var(--big-gap) 0 var(--small-gap);
 }
 
-.section__link {
+.content__link {
   text-shadow: 2px 1px 0 var(--accent-color);
   text-decoration: none;
 }
 
-.section__link:hover {
+.content__link:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.section__link:focus {
+.content__link:focus {
   outline: none;
 }
 
-.section__link:focus-visible {
+.content__link:focus-visible {
   outline: 1px solid var(--text-color);
 }
 
@@ -197,7 +203,11 @@
   }
 
   .header__decoration {
-    inset-inline-end: 38px;
+    inset-inline-end: 39px;
+  }
+
+  .header__decoration::after {
+    inset-inline-start: 9px;
   }
 
   .decorated-zone::before {
@@ -214,6 +224,30 @@
     margin-inline-start: -20px;
     font-size: 120px;
   }
+
+  .content__section {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+      'title text';
+    margin-block-start: 40px;
+    padding: var(--big-gap);
+    
+  }
+
+  .content__section:nth-child(even) {
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+      'title . .'
+      'text text text';
+  }
+
+  .content__title {
+    grid-area: title;
+  }
+
+  .content__wrap {
+    grid-area: text;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -228,5 +262,19 @@
 
   .header__title {
     font-size: 157px;
+  }
+
+  .content__section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+      'title text text';
+  }
+
+  .content__section:nth-child(even) .content__wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content__section:nth-child(even) .content__paragraph-wrap {
+    grid-template-rows: auto 1fr;
   }
 }
