@@ -8,7 +8,7 @@
   --text-color: #f1b2ce;
   --subtitle-color: var(--bg-color);
   --accent-color: #ff0070;
-  --text-shadow: 4px 4px 0 #ff0070;
+  --button-border: 1px solid rgba(255, 0, 112, 0.4);
   --small-gap: 10px;
   --big-gap: 20px;
   --font-family: 'IBM Plex mono', sans-serif;
