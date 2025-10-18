@@ -51,28 +51,28 @@
   .theme_auto .header__theme-menu-button {
     color: var(--text-color);
   }
-  
+
   .theme_auto .header__theme-menu-button_active {
     border: 1px solid var(--text-color);
   }
-  
+
   .theme_auto .header__theme-menu-button:hover {
     border: 1px solid rgba(53, 52, 48, 0.4);
   }
-  
+
   .theme_auto .header__theme-menu-button:focus-visible {
     border-block-end: 1px solid var(--text-color);
   }
-  
+
   .theme_auto .header__decoration {
     display: none;
   }
-  
+
   .theme_auto .decorated-zone::before,
   .theme_auto .decorated-zone::after {
     border-color: var(--text-color);
   }
-  
+
   .theme_auto .content__title {
     color: var(--text-color);
   }
